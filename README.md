@@ -46,8 +46,9 @@
 
 ### 3.0 元功能包下载
 
-本工程基于ROS\melodic版本完成，如果你想尝试运行该工程时请，执行以下操作。
+本工程基于ROS\melodic版本完成，如果你想尝试运行该工程时，请执行以下操作。
 
+```bash
 sudo apt-gat upgrate
 
 sudo apt-get update
@@ -67,6 +68,7 @@ wget http://file.ncnynl.com/ros/gazebo_models.txt           #下载gazebo官方�
 wget -i gazebo_models.txt
 
 ls model.tar.g* | xargs -n1 tar xzvf                                         #解压安装包
+```
 
 ### 3.1所用的元功能包：
 
@@ -130,30 +132,37 @@ robot_vision：实现视觉的功能包，识别目标，控制机器人撞球�
 
 在终端一中执行以下指令：
 
+```bash
 catkin_make
 
 source devel/setup.bash
 
 roslaunch mbot_gazebo withmap.launch
 
-至此会出现gazebo仿真界面，摄像头图像画面，Rviz雷达探测画面
+#至此会出现gazebo仿真界面，摄像头图像画面，Rviz雷达探测画面
+```
 
 在终端二中执行以下指令：
 
+```bash
 catkin_make
 
 source devel/setup.bash
 
 rosrun robot_vision move_mrobot.py
+```
 
 你将在终端看到如下内容：
 
-''请选择你需要追什么颜色的球
+```bash
+请选择你需要追什么颜色的球
 如果你选择红色 请输入：red
 如果你选择绿色 请输入：green
 如果你选择蓝色 请输入：blue
 如果你选择金色 请输入：gold
-如果你选择黑色 请输入：black"
+如果你选择黑色 请输入：black
+>_
+```
 
 在终端中输入相应颜色就会让小车自动追相应的球啦，撞到球完后小车会自动开始导航避障到达目标点。
 
